@@ -7,7 +7,6 @@ Web Application of Registration
 
 ### Built With
 
-* [![Django][djangoproject.com]][Django-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 
 <!-- CONTACT -->
