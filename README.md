@@ -16,7 +16,7 @@ Web Application of Registration
 Natnicha Faksang - 6310682635
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[djangoproject.com]: https://img.shields.io/badge/Django-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
+[djangoproject.com]: https://img.shields.io/badge/Djang0-35495E?style=for-the-badge&logo=django&logoColor=4FC08D
 [Django-url]: https://www.djangoproject.com/
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
