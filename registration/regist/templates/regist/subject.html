@@ -1,0 +1,14 @@
+{% extends 'regist/layout.html' %}
+{% block body %}
+
+<h1>Subjects</h1>
+Subject: {{ subject.code }} {{ subject.name }}
+</br>
+Semester: {{ subject.semester }}/{{ subject.year }}
+</br>
+Total quota: {{ subject.max_cap }}
+</br>
+</br>
+<a href="{% url 'regist:index' %}">Go back</a>
+
+{% endblock %}
