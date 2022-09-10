@@ -5,9 +5,10 @@ from django.urls import reverse
 from .models import Student, Subject, Register
 
 def index(request):
-    student = Student.objects.get(pk=request.user.id)
+    student = Student.objects.filter(pk=request.user.id).first()
     regists = Register.objects.filter(student=student).all()
-    subjects = Subject.objects.exclude(pk__in=regists).all()
+    subjects = Subject.objects.exclude(pk__in=regists, status=False).all()
+    subjects = Subject.objects.filter(status=True).all()
 
     return render(request, 'regist/index.html', {
         'subjects': subjects,
