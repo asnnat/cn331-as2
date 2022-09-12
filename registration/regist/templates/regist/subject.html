@@ -6,9 +6,15 @@ Subject: {{ subject.code }} {{ subject.name }}
 </br>
 Semester: {{ subject.semester }}/{{ subject.year }}
 </br>
-Total quota: {{ subject.max_cap }}
+Total quota: {{ count }}/{{ subject.max_cap }}
 </br>
 </br>
-<a href="{% url 'regist:index' %}">Go back</a>
+{% if registed %}
+<a class="btn btn-dark text-white"href="{% url 'regist:mysubject' %}">Go back</a>
+<a class="btn btn-danger" href="{% url 'regist:removesubject' subject.id %}">Remove</a>
+{% else %}
+<a class="btn btn-dark text-white"href="{% url 'regist:index' %}">Go back</a>
+<a class="btn btn-success" href="{% url 'regist:register' subject.id %}">Regist</a>
+{% endif %}
 
 {% endblock %}

@@ -1,9 +1,8 @@
 {% extends 'users/layout.html' %}
 {% block body %}
     <h1>Login</h1>
-
     {% if message %}
-        <div style="color: red">{{ message }}</div>
+        <div>{{ message }}</div>
     {% endif %}
     <form action="{% url 'users:login' %}" method="POST">
         {% csrf_token %}

@@ -1,25 +1,25 @@
 {% extends 'regist/layout.html' %}
 {% block body %}
-
+{% if message %}
+    <div>{{ message }}</div>
+{% endif %}
 <h1>Subjects</h1>
 <table>
     <tr>
       <th>Code</th>
       <th>Name</th>
       <th>Semester</th>
-      <th>Amount</th>
       <th>Detail</th>
-      <th>Register</th>
     </tr>
     {% for subject in subjects %}
+    {% if subject.status %}
     <tr>
         <td>{{ subject.code }}</td>
         <td>{{ subject.name }}</td>
         <td>{{ subject.semester }}/{{ subject.year }}</td>
-        <td>_/{{ subject.max_cap }}</td>
-        <td><a href="{% url 'regist:subject' subject.id %}">Detail</a></td>
-        <td><a href="{% url 'regist:register' subject.id %}">Regist</a></td>
+        <td><a class="btn btn-dark text-white" href="{% url 'regist:subject' subject.id %}">Detail</a></td>
     </tr>
+    {% endif %}
     {% endfor %}
 </table>
 

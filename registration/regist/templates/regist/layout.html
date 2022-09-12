@@ -20,10 +20,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="">My subject</span></a>
+              <a class="nav-link" href="{% url 'regist:mysubject' %}">My subject</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'regist:index' %}">Regist</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="">{{ request.user.username }}</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'users:logout' %}">Log out</a>

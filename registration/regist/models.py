@@ -6,7 +6,7 @@ class Student(models.Model):
     last = models.CharField(max_length=50)
 
     def __str__(self):
-        return f'{ self.first } { self.last }'
+        return f'{ self.username }'
         
 class Subject(models.Model):
     code = models.CharField(max_length=5)
@@ -24,4 +24,4 @@ class Register(models.Model):
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name="subject")
 
     def __str__(self):
-        return f"{ self.student } regist { self.subject }"
+        return f"{ self.student } { self.subject }"

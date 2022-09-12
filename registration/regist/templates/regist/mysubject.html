@@ -1,0 +1,23 @@
+{% extends 'regist/layout.html' %}
+{% block body %}
+{% if message %}
+    <div>{{ message }}</div>
+{% endif %}
+<h1>Subjects</h1>
+<table>
+    <tr>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Semester</th>
+      <th>Detail</th>
+    </tr>
+    {% for regist in regists %}
+    <tr>
+        <td>{{ regist.subject.code }}</td>
+        <td>{{ regist.subject.name }}</td>
+        <td>{{ regist.subject.semester }}/{{ regist.subject.year }}</td>
+        <td><a class="btn btn-dark text-white" href="{% url 'regist:subject' regist.subject.id %}">Detail</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
