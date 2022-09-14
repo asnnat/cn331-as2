@@ -28,10 +28,12 @@ def login_view(request):
 
                 student = Student.objects.create(username=username, first=first, last=last)
 
-            return HttpResponseRedirect(reverse('users:index'))
+            return HttpResponseRedirect(reverse('regist:index'))
         else:
+
             return render(request, 'users/login.html', {
-                'message': 'Invalid credentials.'
+                'message': 'Invalid credentials.',
+                'message_tag': "alert alert-danger"
             })
     return render(request, 'users/login.html')
 
@@ -39,5 +41,6 @@ def logout_view(request):
     logout(request)
 
     return render(request, 'users/login.html', {
-        'message': 'You are logged out',
+        'message': 'You are logged out.',
+        'message_tag': "alert alert-success"
     })

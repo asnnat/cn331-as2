@@ -1,20 +1,41 @@
 {% extends 'regist/layout.html' %}
 {% block body %}
+<div class="container-fluid">
 
-<h1>Subjects</h1>
-Subject: {{ subject.code }} {{ subject.name }}
-</br>
-Semester: {{ subject.semester }}/{{ subject.year }}
-</br>
-Total quota: {{ count }}/{{ subject.max_cap }}
-</br>
-</br>
-{% if registed %}
-<a class="btn btn-dark text-white"href="{% url 'regist:mysubject' %}">Go back</a>
-<a class="btn btn-danger" href="{% url 'regist:removesubject' subject.id %}">Remove</a>
-{% else %}
-<a class="btn btn-dark text-white"href="{% url 'regist:index' %}">Go back</a>
-<a class="btn btn-success" href="{% url 'regist:register' subject.id %}">Regist</a>
-{% endif %}
-
+    <div class="container">
+        <!-- Title -->
+        <div class="d-flex justify-content-between align-items-center py-3">
+            <h2 class="h5 mb-0"><a href="" class="text-muted"></a>{{ subject.code }}: {{ subject.name }}</h2>
+        </div>
+        
+        <!-- Main content -->
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Details -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                    <table class="table table-borderless">
+                        <tr>
+                            <td colspan="2">Semester:</td>
+                            <td class="text-end">{{ subject.semester }}/{{ subject.year }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Total quota:</td>
+                            <td class="text-end">{{ count }}/{{ subject.max_cap }}</td>
+                        </tr>
+                        <tr>
+                            {% if registed %}
+                            <td colspan="2"><a class="btn btn-dark text-white"href="{% url 'regist:mysubject' %}">Go back</a></td>
+                            <td class="text-end"><a class="btn btn-danger" href="{% url 'regist:removesubject' subject.id %}">Remove</a></td>
+                            {% else %}
+                            <td colspan="2"><a class="btn btn-dark text-white"href="{% url 'regist:index' %}">Go back</a></td>
+                            <td class="text-end"><a class="btn btn-success" href="{% url 'regist:register' subject.id %}">Regist</a></td>
+                            {% endif %}
+                        </tr>
+                    </table>
+                </div>
+             </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
