@@ -8,7 +8,7 @@ from regist.models import Student, Subject
 def index(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse('users:login'))
-    return render(request, 'users/index.html')
+    return render(request, 'regist/index.html')
 
 def login_view(request):
     if request.method == 'POST':
