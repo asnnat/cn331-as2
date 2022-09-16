@@ -3,12 +3,31 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Web Application of Registration
+This is a Web Application of Registration. You can regist subjects and check your registed subject.
+
+Consist of
+* admin
+* user
 
 ### Built With
 
 * [![Django][djangoproject.com]][Django-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+
+### Installation
+
+1. Clone the repo
+    ```sh
+    git clone https://github.com/asnnat/cn331-as2.git cn331-as2
+    ```
+2. Change directory to cn331-as2 directory
+    ```sh
+    cd cn331-as2
+    ```
+3. Open the directory with [https://code.visualstudio.com/download][https://code.visualstudio.com/download]
+    ```sh
+    code .
+    ```
 
 <!-- CONTACT -->
 ## Contact
