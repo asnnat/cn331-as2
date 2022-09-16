@@ -1,7 +1,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is a Web Application of Registration. You can regist subjects and check your registed subject.
+This is a Web Application of Registration.
 
 Consist of
 * admin
