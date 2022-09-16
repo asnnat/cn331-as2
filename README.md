@@ -18,9 +18,10 @@ This is a Web Application of Registration for admin and user.
     ```sh
     git clone https://github.com/asnnat/cn331-as2.git cn331-as2
     ```
-4. Open the directory.
+4. Open the directory
     ```sh
-    code cs331-as2
+    cd cn331-as2
+    code .
     ```
 5. Install requirements for the project
     ```sh
