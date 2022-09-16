@@ -4,6 +4,7 @@
     <div>{{ message }}</div>
 {% endif %}
 <h1>Subjects</h1>
+{% if subjects %}
 <table>
     <tr>
       <th>Code</th>
@@ -21,6 +22,7 @@
     </tr>
     {% endif %}
     {% endfor %}
+{% endif %}
 </table>
 
 {% endblock %}
