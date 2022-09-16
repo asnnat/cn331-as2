@@ -1,51 +1,14 @@
+# CN331 Registration
+
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/asnnat/cn331-as2)
-
-This is a Web Application of Registration for admin and user.
+Web Application of Registration
 
 ### Built With
 
 * [![Django][djangoproject.com]][Django-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-
-### Installation
-
-1. Install [Python](https://www.python.org/downloads/)
-2. Install [Visual Studio Code](https://code.visualstudio.com/download)
-3. Clone the repo
-    ```sh
-    git clone https://github.com/asnnat/cn331-as2.git cn331-as2
-    ```
-4. Open the directory
-    ```sh
-    cd cn331-as2
-    code .
-    ```
-5. Install requirements for the project
-    ```sh
-    python -m pip install -r requirements.txt
-    ```
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-1. Open git bash terminal in Visual Studio Code
-2. Activate virtual environment
-    ```sh
-    source ./.venv/Scripts/activate
-    ```
-3. Change directory to project directory
-    ```sh
-    cd registration
-    ```
-4. Run server
-    ```sh
-    python manage.py runserver
-    ```
-5. If you are user, log in via [http://127.0.0.1:8000](http://127.0.0.1:8000/)
-6. If you are admin, log in via [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
 
 <!-- CONTACT -->
 ## Contact
@@ -54,8 +17,47 @@ This is a Web Application of Registration for admin and user.
 * Kantapat Kowadisai - 6310682783
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[product-screenshot]: images/user_login.png
 [djangoproject.com]: https://img.shields.io/badge/Djang0-35495E?style=for-the-badge&logo=django&logoColor=4FC08D
 [Django-url]: https://www.djangoproject.com/
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
+
+## Getting Started
+
+This is a website where students can check the details of the courses they are registed in, regist for courses and Including being able to cancel the regist request.
+
+### Prerequisites
+
+It is necessary to create an enviroment to install django but first you have to install python which can be downloaded from the link below
+
+[Download Python Here](https://www.python.org/downloads/)
+
+
+# LogIn Page 
+[![Login Page](https://cdn.discordapp.com/attachments/954673856486998016/1020261220181364746/unknown.png)](https://cdn.discordapp.com/attachments/954673856486998016/1020261220181364746/unknown.png)
+
+Students can login through the login page with `Username is student id` and `Password is the ID card code`
+
+Once you have successfully logged in The system will display the Register page as follows.
+ 
+# Regist Page
+[![Regist Page](https://cdn.discordapp.com/attachments/954673856486998016/1020262069783777280/unknown.png)](https://cdn.discordapp.com/attachments/954673856486998016/1020262069783777280/unknown.png)
+In this page you can see all subject that you able to registed and if you click button ***Detail*** you can see a detail of that subject and you can regist that subject if you click ***Regist*** button
+
+[![Regist Page Detail](https://cdn.discordapp.com/attachments/954673856486998016/1020262350311407626/unknown.png)](https://cdn.discordapp.com/attachments/954673856486998016/1020262350311407626/unknown.png)
+
+Once you have successfully registered. The system will take you to [My Subject](#my-subject-page) page
+
+# My Subject Page
+[![My Subject Page](https://cdn.discordapp.com/attachments/954673856486998016/1020262541819129866/unknown.png)](https://cdn.discordapp.com/attachments/954673856486998016/1020262541819129866/unknown.png)
+In this page you can see all subject that you have registed and if you click button ***Detail*** you can see a detail of that subject and you can unregist that subject if you click ***Remove*** button
+
+[![My Subject Page Detail](https://cdn.discordapp.com/attachments/954673856486998016/1020262735604351046/unknown.png)](https://cdn.discordapp.com/attachments/954673856486998016/1020262735604351046/unknown.png)
+
+# Logout
+[![Logout](https://cdn.discordapp.com/attachments/954673856486998016/1020262069783777280/unknown.png)](https://cdn.discordapp.com/attachments/954673856486998016/1020262069783777280/unknown.png)
+
+You can logout at any time by clicking on the logout button on the right top of bar and Whenever you successfully logout, you will be returned to the login page and there is a warning message saying 
+* "You are logged out."
+
+---
