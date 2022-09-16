@@ -3,10 +3,34 @@
 {% if message %}
     <div>{{ message }}</div>
 {% endif %}
-<h1>Subjects</h1>
-{% if subjects %}
-<table>
-    <tr>
+<style>
+    div.a {
+      position:relative;
+      left:478px
+    }
+        table, th, td {
+            border: 1px solid black;
+    }
+    th, td {
+        background-color: #fefbcb;  
+        padding: 15px;
+    }
+    td {
+        text-align: center;
+        vertical-align: middle;
+    }
+    h3 {
+        text-align: center;
+    }
+    </style>
+{% if regists %}
+<div class="a">
+<h1>My Subjects</h1>
+</div>
+<table align = "center"
+    width=50%; 
+    table-layout="fixed">
+    <tr align = "center">
       <th>Code</th>
       <th>Name</th>
       <th>Semester</th>
@@ -21,5 +45,7 @@
     </tr>
     {% endfor %}
 </table>
+{% else %}
+<h3> You are not enrolled. </h3>
 {% endif %}
 {% endblock %}
