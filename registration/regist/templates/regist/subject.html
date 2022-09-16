@@ -23,8 +23,13 @@
                             <td colspan="2"><a class="btn btn-dark text-white"href="{% url 'regist:mysubject' %}">Go back</a></td>
                             <td class="text-end"><a class="btn btn-danger" href="{% url 'regist:removesubject' subject.id %}">Remove</a></td>
                             {% else %}
-                            <td colspan="2"><a class="btn btn-dark text-white"href="{% url 'regist:index' %}">Go back</a></td>
-                            <td class="text-end"><a class="btn btn-success" href="{% url 'regist:register' subject.id %}">Regist</a></td>
+                                {% if count < subject.max_cap %}
+                                <td colspan="2"><a class="btn btn-dark text-white"href="{% url 'regist:index' %}">Go back</a></td>
+                                <td class="text-end"><a class="btn btn-success" href="{% url 'regist:register' subject.id %}">Regist</a></td>
+                                {% else %}
+                                <td colspan="2"><a class="btn btn-dark text-white"href="{% url 'regist:index' %}">Go back</a></td>
+                                <td class="text-end"><a class="btn btn-secondary disabled" href="{% url 'regist:register' subject.id %}">Regist</a></td>
+                                {% endif %}
                             {% endif %}
                         </tr>
                     </table>
