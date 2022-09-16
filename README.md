@@ -1,11 +1,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is a Web Application of Registration.
+[![Product Name Screen Shot][product-screenshot]](https://github.com/asnnat/cn331-as2)
 
-Consist of
-* admin
-* user
+This is a Web Application of Registration for admin and user.
 
 ### Built With
 
@@ -53,8 +51,8 @@ Consist of
 * Kantapat Kowadisai - 6310682783
 
 <!-- MARKDOWN LINKS & IMAGES -->
+[product-screenshot]: images/user_login.png
 [djangoproject.com]: https://img.shields.io/badge/Djang0-35495E?style=for-the-badge&logo=django&logoColor=4FC08D
 [Django-url]: https://www.djangoproject.com/
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
-
