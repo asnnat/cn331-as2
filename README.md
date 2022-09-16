@@ -31,7 +31,7 @@ This is a Web Application of Registration for admin and user.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-1. Open git bash terminal
+1. Open git bash terminal in Visual Studio Code
 2. Activate virtual environment
     ```sh
     source ./.venv/Scripts/activate
