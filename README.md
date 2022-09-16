@@ -43,8 +43,8 @@ Consist of
     ```sh
     python manage.py runserver
     ```
-5. If you are user, log in by your username and password via [http://127.0.0.1:8000](http://127.0.0.1:8000/)
-6. If you are admin, you must access via [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
+5. If you are user, log in via [http://127.0.0.1:8000](http://127.0.0.1:8000/)
+6. If you are admin, log in via [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
 
 <!-- CONTACT -->
 ## Contact
