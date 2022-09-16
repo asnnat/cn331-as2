@@ -13,18 +13,14 @@ This is a Web Application of Registration for admin and user.
 ### Installation
 
 1. Install [https://www.python.org/downloads/](Python)
-2. Install [https://code.visualstudio.com/download](Visual Studio Code)
-2. Clone the repo
+2. Install [https://code.visualstudio.com/download/](Visual Studio Code)
+3. Clone the repo
     ```sh
     git clone https://github.com/asnnat/cn331-as2.git cn331-as2
     ```
-3. Change directory to cn331-as2 directory.
-    ```sh
-    cd cn331-as2
-    ```
 4. Open the directory.
     ```sh
-    code .
+    code cs331-as2
     ```
 5. Install requirements for the project
     ```sh
