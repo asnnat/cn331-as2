@@ -69,6 +69,7 @@ Students can login with `Username is student ID` and `Password is cn331pass`.
 Once you have successfully logged in, the system will display the [Regist](#regist-page) page.
  
 ### Regist Page
+
 [![Regist Page](images/user_subject.png)](http://127.0.0.1:8000/regist/)
 
 Click ***Detail*** button to see detail of the subject.
@@ -92,6 +93,8 @@ Click ***Remove*** button to unregist the subject.
 ### Logout
 
 Click ***Logout*** button at top right corner to logout.
+
+[![Logout Page](images/user_logout.png)]()
 
 Whenever you successfully logout, you will be returned to the login page with message ***You are logged out.***
 
