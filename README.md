@@ -66,7 +66,7 @@ You have to install software before using the project.
 
 Students can login with `Username is student ID` and `Password is cn331pass`.
 
-Once you have successfully logged in, the system will display the [Regist page](#regist-page).
+Once you have successfully logged in, the system will display the [Regist](#regist-page) page.
  
 ### Regist Page
 [![Regist Page](images/user_subject.png)](http://127.0.0.1:8000/regist/)
@@ -98,8 +98,8 @@ Whenever you successfully logout, you will be returned to the login page with me
 <!-- CONTACT -->
 ## Contact
 
-* Natnicha Faksang - 6310682635
-* Kantapat Kowadisai - 6310682783
+* Natnicha Faksang - 6310682635 - 6310682635@student.tu.ac.th
+* Kantapat Kowadisai - 6310682783 - 6310682783@student.tu.ac.th
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [product-screenshot]: images/user_login.png
