@@ -11,10 +11,10 @@ def index(request):
     id = []
     for regist in regists:
         id.append(regist.subject.id)
-    subjects = Subject.objects.exclude(pk__in=id)
+    subjects = Subject.objects.exclude(pk__in=id).filter(status=True)
 
     return render(request, 'regist/index.html', {
-        'subjects': subjects,
+        'subjects': subjects
     })
 
 def subject(request, subject_id):
@@ -37,14 +37,19 @@ def register(request, subject_id):
     if not check:
         regist = Register.objects.create(student=student, subject=subject)
 
-        return HttpResponseRedirect(reverse('regist:mysubject'))
+        # return HttpResponseRedirect(reverse('regist:mysubject'))
+        return mysubject(request, {
+            'message': 'Regist {} success'.format(subject),
+            'message_tag': "alert alert-success"
+        })
 
-def mysubject(request):
+def mysubject(request, message=None):
     student = Student.objects.get(username=request.user.username)
     regists = Register.objects.filter(student=student).all()
 
     return render(request, 'regist/mysubject.html', {
         'regists': regists,
+        'message': message
     })
 
 def removesubject(request, subject_id):
@@ -55,4 +60,8 @@ def removesubject(request, subject_id):
     if regist:
         unregist = regist.delete()
         if unregist:
-            return HttpResponseRedirect(reverse('regist:mysubject'))
+            # return HttpResponseRedirect(reverse('regist:mysubject'))
+            return mysubject(request, {
+                'message': 'Remove {} success'.format(subject),
+                'message_tag': "alert alert-danger"
+            })
