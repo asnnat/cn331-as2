@@ -70,7 +70,7 @@ Once you have successfully logged in, the system will display the [Regist](#regi
  
 ### Regist Page
 
-[![Regist Page](images/user_subject.png)](http://127.0.0.1:8000/regist/)
+[![Regist Page](images/user_subject.png)]
 
 Click ***Detail*** button to see detail of the subject.
 
@@ -82,7 +82,7 @@ Once you have successfully registered, the system will take you to [My Subject](
 
 ### My Subject Page
 
-[![My Subject Page](images/user_mysubject.png)](http://127.0.0.1:8000/regist/mysubject)
+[![My Subject Page](images/user_mysubject.png)]
 
 Click ***Detail*** button to see detail of the subject that you registed.
 
@@ -94,7 +94,7 @@ Click ***Remove*** button to unregist the subject.
 
 Click ***Logout*** button at top right corner to logout.
 
-[![Logout Page](images/user_logout.png)](http://127.0.0.1:8000/logout)
+[![Logout Page](images/user_logout.png)]
 
 Whenever you successfully logout, you will be returned to the login page with message ***You are logged out.***
 
