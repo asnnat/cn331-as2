@@ -32,33 +32,33 @@ You have to install software before using the project.
     ```sh
     cd cn331-as2
     ```
-2. Open the dirctory with Visual Studio Code
+3. Open the dirctory with Visual Studio Code
     ```sh
     code .
-    ```
-5. Install requirements for the project
-    ```sh
-    python -m pip install -r requirements.txt
     ```
 
 <!-- USAGE -->
 ## Usage
 
 1. Open git bash terminal in Visual Studio Code
-2. Activate virtual environment
+2. Install requirements for the project
+    ```sh
+    python -m pip install -r requirements.txt
+    ```
+3. Activate virtual environment
     ```sh
     source ./.venv/Scripts/activate
     ```
-3. Change directory to project directory
+4. Change directory to project directory
     ```sh
     cd registration
     ```
-4. Run server
+5. Run server
     ```sh
     python manage.py runserver
     ```
-5. If you are user, log in via [http://127.0.0.1:8000](http://127.0.0.1:8000/)
-6. If you are admin, log in via [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
+6. If you are user, log in via [http://127.0.0.1:8000](http://127.0.0.1:8000/)
+7. If you are admin, log in via [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
 
 ### LogIn Page 
 
