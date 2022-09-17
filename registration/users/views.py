@@ -42,5 +42,5 @@ def logout_view(request):
 
     return render(request, 'users/login.html', {
         'message': 'You are logged out.',
-        'message_tag': "alert alert-success"
+        'message_tag': "alert alert-danger"
     })
