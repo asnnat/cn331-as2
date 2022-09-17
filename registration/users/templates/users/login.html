@@ -2,16 +2,16 @@
 {% block body %}
 <section class="vh-100" style="background-color: #c9bd5f;">
     <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="row d-flex justify-content-center align-items-center">
             <div class="col col-xl-10">
                 <div class="card" style="border-radius: 1rem;">
-                    <div class="row g-0">
-                            <div class="col-md-6 col-lg-5 d-none d-md-block">
-                                <img src="https://picsum.photos/1280/1920" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
-                            </div>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-5 d-none d-md-block">
+                            <img src="https://picsum.photos/1280/1920" class="img-fluid" style="border-radius: 1rem 0 0 1rem;"/>
+                        </div>
                         <div class="col-md-6 col-lg-7 d-flex align-items-center">
                             <div class="card-body p-4 p-lg-5 text-black">
-                                <div class="d-flex align-items-center mb-3 pb-1">
+                                <div class="align-items-center mb-3 pb-1">
                                     <span class="h1 fw-bold mb-0">BookingReg</span>
                                 </div>
                                 <form action="{% url 'users:login' %}" method="POST">
