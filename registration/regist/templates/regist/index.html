@@ -1,28 +1,37 @@
 {% extends 'regist/layout.html' %}
 {% block body %}
-{% if message %}
-    <div>{{ message }}</div>
-{% endif %}
-<h1>Subjects</h1>
-{% if subjects %}
-<table>
-    <tr>
-      <th>Code</th>
-      <th>Name</th>
-      <th>Semester</th>
-      <th>Detail</th>
-    </tr>
-    {% for subject in subjects %}
-    {% if subject.status %}
-    <tr>
-        <td>{{ subject.code }}</td>
-        <td>{{ subject.name }}</td>
-        <td>{{ subject.semester }}/{{ subject.year }}</td>
-        <td><a class="btn btn-dark text-white" href="{% url 'regist:subject' subject.id %}">Detail</a></td>
-    </tr>
-    {% endif %}
-    {% endfor %}
-{% endif %}
-</table>
-
+<section class="vh-100" style="background-color: #c9bd5f;">
+    <div class="container">
+        <div class="py-3"></div>
+        <div class="row card">
+            <h1 style="text-align: center">Subjects</h1>
+            <div class="card-body">
+                {% if subjects %}
+                <table class="table table-hover" style="text-align: center;">
+                    <tr>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>Semester</th>
+                        <th>Detail</th>
+                    </tr>
+                    {% for subject in subjects %}
+                    {% if subject.status %}
+                    <tr>
+                        <td>{{ subject.code }}</td>
+                        <td>{{ subject.name }}</td>
+                        <td>{{ subject.semester }}/{{ subject.year }}</td>
+                        <td><a class="btn btn-dark text-white" href="{% url 'regist:subject' subject.id %}">Detail</a></td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </table>
+                {% else %}
+                <div class="alert alert-danger" role="alert">
+                    No subject is available
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
