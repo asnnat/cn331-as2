@@ -1,7 +1,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/asnnat/cn331-as2)
+[![Product Name Screen Shot][product-screenshot]][github-url]
 
 BookingReg is a Web Application of Registration for admin and user.
 
@@ -13,7 +13,7 @@ BookingReg is a Web Application of Registration for admin and user.
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is a website where students can check the details of the courses they are registed in, regist courses and cancel the regist request.
+In this website, students can check the details of the courses they are registed in, regist courses and cancel the regist request.
 
 ### Prerequisites
 
@@ -62,29 +62,38 @@ You have to install software before using the project.
 
 ### LogIn Page 
 
-[![Login Page][images/user_login.png]]()
+[![Login Page](images/user_login.png)](http://127.0.0.1:8000/)
 
-Students can login with `Username is student id` and `Password is cn331pass`
+Students can login with `Username is student ID` and `Password is cn331pass`.
 
-Once you have successfully logged in The system will display the Register page as follows.
+Once you have successfully logged in, the system will display the [Regist page](#regist-page).
  
 ### Regist Page
 [![Regist Page](images/user_subject.png)](http://127.0.0.1:8000/regist/)
-In this page you can see all subject that you able to registed and if you click button ***Detail*** you can see a detail of that subject and you can regist that subject if you click ***Regist*** button
+
+Click ***Detail*** button to see detail of the subject.
 
 [![Regist Page Detail](images/user_registsubject.png)]()
 
-Once you have successfully registered. The system will take you to [My Subject](#my-subject-page) page
+Click ***Regist*** button to regist the subject.
+
+Once you have successfully registered, the system will take you to [My Subject](#my-subject-page) page.
 
 ### My Subject Page
-[![My Subject Page](images/user_mysubject.png)](http://127.0.0.1:8000/regist/mysubject)
-In this page you can see all subject that you have registed and if you click button ***Detail*** you can see a detail of that subject and you can unregist that subject if you click ***Remove*** button
 
-[![My Subject Page Detail](mages/user_removesubject.png)]()
+[![My Subject Page](images/user_mysubject.png)](http://127.0.0.1:8000/regist/mysubject)
+
+Click ***Detail*** button to see detail of the subject that you registed.
+
+[![My Subject Page Detail](images/user_removesubject.png)]()
+
+Click ***Remove*** button to unregist the subject.
 
 ### Logout
-You can logout at any time by clicking on the logout button on the right top of bar and Whenever you successfully logout, you will be returned to the login page and there is a warning message saying 
-* "You are logged out."
+
+Click ***Logout*** button at top right corner to logout.
+
+Whenever you successfully logout, you will be returned to the login page with message ***You are logged out.***
 
 <!-- CONTACT -->
 ## Contact
@@ -94,6 +103,7 @@ You can logout at any time by clicking on the logout button on the right top of 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [product-screenshot]: images/user_login.png
+[github-url]: https://github.com/asnnat/cn331-as2
 [djangoproject.com]: https://img.shields.io/badge/Djang0-35495E?style=for-the-badge&logo=django&logoColor=4FC08D
 [Django-url]: https://www.djangoproject.com/
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
