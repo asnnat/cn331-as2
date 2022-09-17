@@ -3,13 +3,14 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://github.com/asnnat/cn331-as2)
 
-This is a BookingReg Web Application of Registration for admin and user.
+BookingReg is a Web Application of Registration for admin and user.
 
 ### Built With
 
 * [![Django][djangoproject.com]][Django-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 
+<!-- GETTING STARTED -->
 ## Getting Started
 
 This is a website where students can check the details of the courses they are registed in, regist courses and cancel the regist request.
@@ -40,7 +41,7 @@ You have to install software before using the project.
     python -m pip install -r requirements.txt
     ```
 
-<!-- USAGE EXAMPLES -->
+<!-- USAGE -->
 ## Usage
 
 1. Open git bash terminal in Visual Studio Code
@@ -60,29 +61,28 @@ You have to install software before using the project.
 6. If you are admin, log in via [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
 
 ### LogIn Page 
-[![Login Page](https://cdn.discordapp.com/attachments/954673856486998016/1020261220181364746/unknown.png)](https://cdn.discordapp.com/attachments/954673856486998016/1020261220181364746/unknown.png)
 
-Students can login through the login page with `Username is student id` and `Password is the ID card code`
+[![Login Page](images/user_login.png)](images/user_login.png)
+
+Students can login with `Username is student id` and `Password is the ID card code`
 
 Once you have successfully logged in The system will display the Register page as follows.
  
 ### Regist Page
-[![Regist Page](https://cdn.discordapp.com/attachments/954673856486998016/1020262069783777280/unknown.png)](https://cdn.discordapp.com/attachments/954673856486998016/1020262069783777280/unknown.png)
+[![Regist Page](images/user_registsubject.png)](images/user_registsubject.png)
 In this page you can see all subject that you able to registed and if you click button ***Detail*** you can see a detail of that subject and you can regist that subject if you click ***Regist*** button
 
-[![Regist Page Detail](https://cdn.discordapp.com/attachments/954673856486998016/1020262350311407626/unknown.png)](https://cdn.discordapp.com/attachments/954673856486998016/1020262350311407626/unknown.png)
+[![Regist Page Detail](images/user_subject.png)](images/user_subject.png)
 
 Once you have successfully registered. The system will take you to [My Subject](#my-subject-page) page
 
 ### My Subject Page
-[![My Subject Page](https://cdn.discordapp.com/attachments/954673856486998016/1020262541819129866/unknown.png)](https://cdn.discordapp.com/attachments/954673856486998016/1020262541819129866/unknown.png)
+[![My Subject Page](images/user_mysubject.png)](images/user_mysubject.png)
 In this page you can see all subject that you have registed and if you click button ***Detail*** you can see a detail of that subject and you can unregist that subject if you click ***Remove*** button
 
-[![My Subject Page Detail](https://cdn.discordapp.com/attachments/954673856486998016/1020262735604351046/unknown.png)](https://cdn.discordapp.com/attachments/954673856486998016/1020262735604351046/unknown.png)
+[![My Subject Page Detail](images/user_removesubject.png)](images/user_removesubject.png)
 
 ### Logout
-[![Logout](https://cdn.discordapp.com/attachments/954673856486998016/1020262069783777280/unknown.png)](https://cdn.discordapp.com/attachments/954673856486998016/1020262069783777280/unknown.png)
-
 You can logout at any time by clicking on the logout button on the right top of bar and Whenever you successfully logout, you will be returned to the login page and there is a warning message saying 
 * "You are logged out."
 
