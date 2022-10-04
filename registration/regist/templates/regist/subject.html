@@ -21,11 +21,21 @@
                         <tr>
                             {% if registed %}
                             <td colspan="2"><a class="btn btn-dark text-white"href="{% url 'regist:mysubject' %}">Go back</a></td>
-                            <td class="text-end"><a class="btn btn-danger" href="{% url 'regist:removesubject' subject.id %}">Remove</a></td>
+                            <form action="{% url 'regist:removesubject' subject.id %}" method="POST">
+                                {% csrf_token %}
+                                <td class="text-end">
+                                    <button type="submit" class="btn btn-danger">Remove</button>
+                                </td>
+                            </form>
                             {% else %}
                                 {% if count < subject.max_cap %}
                                 <td colspan="2"><a class="btn btn-dark text-white"href="{% url 'regist:index' %}">Go back</a></td>
-                                <td class="text-end"><a class="btn btn-success" href="{% url 'regist:register' subject.id %}">Regist</a></td>
+                                <form action="{% url 'regist:register' subject.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <td class="text-end">
+                                        <button type="submit" class="btn btn-success">Regist</button>
+                                    </td>
+                                </form>
                                 {% else %}
                                 <td colspan="2"><a class="btn btn-dark text-white"href="{% url 'regist:index' %}">Go back</a></td>
                                 <td class="text-end"><a class="btn btn-secondary disabled" href="{% url 'regist:register' subject.id %}">Regist</a></td>

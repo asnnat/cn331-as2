@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
@@ -30,21 +30,26 @@ def subject(request, subject_id):
     })
 
 def register(request, subject_id):
-    student = Student.objects.get(username=request.user.username)
-    subject = Subject.objects.get(pk=subject_id)
+    if request.method == 'POST':
+        student = Student.objects.filter(username=request.user.username).first()
+        subject = Subject.objects.filter(pk=subject_id).first()
 
-    check = Register.objects.filter(student=student, subject=subject).first()
-    if not check:
-        regist = Register.objects.create(student=student, subject=subject)
+        check = Register.objects.filter(student=student, subject=subject).first()
+        if check is None:
+            Register.objects.create(student=student, subject=subject)
 
-        # return HttpResponseRedirect(reverse('regist:mysubject'))
-        return mysubject(request, {
-            'message': 'Regist {} success'.format(subject),
-            'message_tag': "alert alert-success"
-        })
+            # return HttpResponseRedirect(reverse('regist:mysubject'))
+            return mysubject(request, {
+                'message': 'Regist {} success'.format(subject),
+                'message_tag': "alert alert-success"
+            })
+        else:
+            return render(request, 'regist/index.html')
+    else:
+        return render(request, 'regist/index.html')
 
 def mysubject(request, message=None):
-    student = Student.objects.get(username=request.user.username)
+    student = Student.objects.filter(username=request.user.username).first()
     regists = Register.objects.filter(student=student).all()
 
     return render(request, 'regist/mysubject.html', {
@@ -53,15 +58,20 @@ def mysubject(request, message=None):
     })
 
 def removesubject(request, subject_id):
-    student = Student.objects.get(username=request.user.username)
-    subject = Subject.objects.get(pk=subject_id)
-    regist = Register.objects.get(student=student, subject=subject)
+    if request.method == 'POST':
+        student = Student.objects.get(username=request.user.username)
+        subject = Subject.objects.get(pk=subject_id)
+        regist = Register.objects.get(student=student, subject=subject)
 
-    if regist:
-        unregist = regist.delete()
-        if unregist:
-            # return HttpResponseRedirect(reverse('regist:mysubject'))
+        if regist:
+            regist.delete()
+
             return mysubject(request, {
                 'message': 'Remove {} success'.format(subject),
                 'message_tag': "alert alert-danger"
             })
+        else:
+            return render(request, 'regist/mysubject.html')
+    else:
+        return render(request, 'regist/mysubject.html')
+            
