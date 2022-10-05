@@ -35,7 +35,7 @@ def register(request, subject_id):
         subject = Subject.objects.filter(pk=subject_id).first()
 
         check = Register.objects.filter(student=student, subject=subject).first()
-        if check is None:
+        if check is None and student is not None:
             Register.objects.create(student=student, subject=subject)
 
             # return HttpResponseRedirect(reverse('regist:mysubject'))
@@ -46,7 +46,7 @@ def register(request, subject_id):
         else:
             return render(request, 'regist/index.html')
     else:
-        return render(request, 'regist/index.html')
+        return render(request, 'regist/index.html', status=400)
 
 def mysubject(request, message=None):
     student = Student.objects.filter(username=request.user.username).first()

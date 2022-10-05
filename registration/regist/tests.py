@@ -72,10 +72,46 @@ class TestViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'regist/subject.html')
 
-    # def test_register(self):
-    #     response = self.client.post(self.register_url)
+    def test_register(self):
+        url = reverse('users:login')
+        response = self.client.post(url, {
+            'username': 6310682635,
+            'password': 'cn331pass'
+        })
 
-    #     self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 200)
+
+        subject = Subject.objects.create(
+            code='CN102',
+            name='PROGRAMMING PRACTICE I',
+            semester=1,
+            year=2566,
+            max_cap=10,
+            status=True
+        )
+
+        url = reverse('regist:register', args=[subject.id])
+        response = self.client.post(url)
+
+        self.assertEqual(response.status_code, 200)
+
+    def test_register_student_is_none(self):
+
+        subject = Subject.objects.create(
+            code='CN102',
+            name='PROGRAMMING PRACTICE I',
+            semester=1,
+            year=2566,
+            max_cap=10,
+            status=True
+        )
+
+        url = reverse('regist:register', args=[subject.id])
+        response = self.client.post(url)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'regist/index.html')
+
 
     def test_mysubject(self):
         response = self.client.get(self.mysubject_url)

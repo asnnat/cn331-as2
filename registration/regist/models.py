@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 
 class Student(models.Model):
@@ -20,8 +21,8 @@ class Subject(models.Model):
         return f"{ self.code } { self.name }"
 
 class Register(models.Model):
-    student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name="student")
-    subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name="subject")
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name="student", default=None)
+    subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name="subject", default=None)
 
     def __str__(self):
         return f"{ self.student } { self.subject }"
