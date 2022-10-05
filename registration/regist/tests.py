@@ -7,7 +7,7 @@ from .views import index, subject, register, mysubject, removesubject
 
 class TestUrl(SimpleTestCase):
     def test_index_is_resolved(self):
-        url = reverse('regist:index')
+        url = reverse("regist:index")
         self.assertEqual(resolve(url).func, index)
 
     def test_subject_is_resolved(self):
