@@ -13,4 +13,4 @@ jobs:
           python3 ./registration/manage.py makemigrations
           python3 ./registration/manage.py migrate
           coverage run ./registration/manage.py test regist users
-          coverage report
+          coverage report -m

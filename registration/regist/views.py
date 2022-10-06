@@ -32,10 +32,10 @@ def subject(request, subject_id):
 def register(request, subject_id):
     if request.method == 'POST':
         student = Student.objects.filter(username=request.user.username).first()
-        subject = Subject.objects.filter(pk=subject_id).first()
+        subject = Subject.objects.filter(pk=subject_id).first()\
 
         check = Register.objects.filter(student=student, subject=subject).first()
-        if check is None and student is not None:
+        if check is None:
             Register.objects.create(student=student, subject=subject)
 
             # return HttpResponseRedirect(reverse('regist:mysubject'))
@@ -44,7 +44,7 @@ def register(request, subject_id):
                 'message_tag': "alert alert-success"
             })
         else:
-            return render(request, 'regist/index.html')
+            return render(request, 'regist/index.html', status=400)
     else:
         return render(request, 'regist/index.html', status=400)
 
@@ -59,11 +59,11 @@ def mysubject(request, message=None):
 
 def removesubject(request, subject_id):
     if request.method == 'POST':
-        student = Student.objects.get(username=request.user.username)
-        subject = Subject.objects.get(pk=subject_id)
-        regist = Register.objects.get(student=student, subject=subject)
+        student = Student.objects.filter(username=request.user.username).first()
+        subject = Subject.objects.filter(pk=subject_id).first()
+        regist = Register.objects.filter(student=student, subject=subject).first()
 
-        if regist:
+        if regist is not None:
             regist.delete()
 
             return mysubject(request, {
@@ -71,7 +71,6 @@ def removesubject(request, subject_id):
                 'message_tag': "alert alert-danger"
             })
         else:
-            return render(request, 'regist/mysubject.html')
+            return render(request, 'regist/mysubject.html', status=400)
     else:
-        return render(request, 'regist/mysubject.html')
-            
+        return render(request, 'regist/mysubject.html', status=400)

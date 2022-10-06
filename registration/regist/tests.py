@@ -31,7 +31,7 @@ class TestViews(TestCase):
         self.client = Client()
 
         self.username = 'testuser'
-        self.password = 'secret'
+        self.password = 'cn331pass'
         self.email = 'testuser@bookingreg.com'
         self.first = 'Test'
         self.last = 'User'
@@ -60,6 +60,8 @@ class TestViews(TestCase):
         self.mysubject_url = reverse('regist:mysubject')
         self.removesubject_url = reverse('regist:removesubject', args=[self.regist.id])
 
+        self.client.login(username=self.username, password=self.password)
+
     def test_index(self):
         response = self.client.get(self.index_url)
 
@@ -73,14 +75,6 @@ class TestViews(TestCase):
         self.assertTemplateUsed(response, 'regist/subject.html')
 
     def test_register(self):
-        url = reverse('users:login')
-        response = self.client.post(url, {
-            'username': 6310682635,
-            'password': 'cn331pass'
-        })
-
-        self.assertEqual(response.status_code, 200)
-
         subject = Subject.objects.create(
             code='CN102',
             name='PROGRAMMING PRACTICE I',
@@ -94,24 +88,19 @@ class TestViews(TestCase):
         response = self.client.post(url)
 
         self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'regist/mysubject.html')
 
-    def test_register_student_is_none(self):
+    def test_register_already_registed(self):
+        response = self.client.post(self.register_url)
 
-        subject = Subject.objects.create(
-            code='CN102',
-            name='PROGRAMMING PRACTICE I',
-            semester=1,
-            year=2566,
-            max_cap=10,
-            status=True
-        )
-
-        url = reverse('regist:register', args=[subject.id])
-        response = self.client.post(url)
-
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 400)
         self.assertTemplateUsed(response, 'regist/index.html')
 
+    def test_register_get(self):
+        response = self.client.get(self.register_url)
+
+        self.assertEqual(response.status_code, 400)
+        self.assertTemplateUsed(response, 'regist/index.html')
 
     def test_mysubject(self):
         response = self.client.get(self.mysubject_url)
@@ -119,15 +108,30 @@ class TestViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'regist/mysubject.html')
 
-    def test_removesubject_already_registed(self):
-        response = self.client.delete(self.removesubject_url)
+    def test_removesubject(self):
+        response = self.client.post(self.removesubject_url)
 
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'regist/mysubject.html')
 
-    def test_removesubject_no_regist(self):
-        # cannot be POST
+    def test_removesubject_did_not_regist(self):
+        subject = Subject.objects.create(
+            code='CN102',
+            name='PROGRAMMING PRACTICE I',
+            semester=1,
+            year=2566,
+            max_cap=10,
+            status=True
+        )
+
+        url = reverse('regist:removesubject', args=[subject.id])
+        response = self.client.post(url)
+
+        self.assertEqual(response.status_code, 400)
+        self.assertTemplateUsed(response, 'regist/mysubject.html')
+
+    def test_removesubject_get(self):
         response = self.client.get(self.removesubject_url)
 
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 400)
         self.assertTemplateUsed(response, 'regist/mysubject.html')
