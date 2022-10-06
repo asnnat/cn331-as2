@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 
 from regist.models import Student, Subject
-
+from regist import views
 def index(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse('users:login'))
@@ -27,14 +27,13 @@ def login_view(request):
                 last = request.user.last_name
 
                 student = Student.objects.create(username=username, first=first, last=last)
-
-            return HttpResponseRedirect(reverse('regist:index'))
+            return index(request)
+            # return HttpResponseRedirect(reverse('regist:index'))
         else:
-
             return render(request, 'users/login.html', {
                 'message': 'Invalid credentials.',
-                'message_tag': "alert alert-danger"
-            })
+                'message_tag': "alert alert-danger",
+            }, status = 400)
     return render(request, 'users/login.html')
 
 def logout_view(request):
