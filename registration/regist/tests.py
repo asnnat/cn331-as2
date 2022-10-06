@@ -135,3 +135,34 @@ class TestViews(TestCase):
 
         self.assertEqual(response.status_code, 400)
         self.assertTemplateUsed(response, 'regist/mysubject.html')
+
+class TestModel(TestCase):
+    def setUp(self):
+        self.student = Student.objects.create(
+            username = 'testuser',
+            first = 'Test',
+            last = 'User'
+        )
+
+        self.subject = Subject.objects.create(
+            code='CN101',
+            name='INTRODUCTION TO COMPUTER PROGRAMMING',
+            semester=1,
+            year=2566,
+            max_cap=5,
+            status=True
+        )
+
+        self.register = Register.objects.create(
+            student = self.student,
+            subject = self.subject
+        )
+    
+    def test_student_str(self):
+        self.assertEquals(self.student.__str__(), self.student.username)
+
+    def test_subject_str(self):
+        self.assertEquals(self.subject.__str__(), self.subject.code + ' ' + self.subject.name)
+
+    def test_register_str(self):
+        self.assertEquals(self.register.__str__(), self.student.username + ' ' + self.subject.code + ' ' + self.subject.name)
