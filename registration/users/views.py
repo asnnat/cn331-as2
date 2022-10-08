@@ -7,7 +7,7 @@ from regist.models import Student, Subject
 from regist import views
 def index(request):
     if not request.user.is_authenticated:
-        return HttpResponseRedirect(reverse('users:login'))
+        return render(request, 'users/login.html',status = 400)
     return render(request, 'regist/index.html')
 
 def login_view(request):
@@ -16,7 +16,7 @@ def login_view(request):
         password = request.POST['password']
 
         user = authenticate(username=username, password=password)
-
+        
         if user is not None:
             login(request, user)
 
@@ -27,14 +27,15 @@ def login_view(request):
                 last = request.user.last_name
 
                 student = Student.objects.create(username=username, first=first, last=last)
-            return index(request)
+            return views.index(request)
             # return HttpResponseRedirect(reverse('regist:index'))
         else:
             return render(request, 'users/login.html', {
                 'message': 'Invalid credentials.',
                 'message_tag': "alert alert-danger",
-            }, status = 400)
-    return render(request, 'users/login.html')
+            },status = 400)
+    #return render(request, 'users/login.html')
+
 
 def logout_view(request):
     logout(request)

@@ -54,6 +54,26 @@ class TestViews(TestCase):
 
         self.assertEqual(response.status_code, 400)
 
+    def test_index_is_success(self):
+        url = reverse('users:login')
+        response = self.client.post(url, {
+            'username': 'testuser',
+            'password': 'secret'
+        })
+        url = reverse('users:index')
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+
+    def test_index_is_notsuccess(self):
+        url = reverse('users:login')
+        response = self.client.post(url, {
+            'username': 'testuser',
+            'password': 'notsecret'
+        })
+        url = reverse('users:index')
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 400)
+   
     def test_logout_is_success(self):
         url = reverse("users:logout")
         response = self.client.get(url)
